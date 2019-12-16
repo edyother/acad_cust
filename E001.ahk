@@ -1,0 +1,3 @@
+^!0::
+Send,E001{Tab}ELECTRICAL SPECIFICATIONS AND SYMBOLS{Tab}E001{Tab}{Home}^v
+return
