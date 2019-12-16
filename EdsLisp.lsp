@@ -1581,3 +1581,8 @@
 (command "dimlinear")
 (princ)
 )
+
+(defun c:f()
+(command "find")
+(princ)
+)
