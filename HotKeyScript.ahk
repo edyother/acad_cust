@@ -44,7 +44,7 @@ return
 
 ;Lisp Template
 !^'::
-send,(defun c:(){Return}(command ){Return}(princ){Return}){Up}{Up}{Up}{Right}{Right}{Right}{Right}{Right}{Right}{Right}{Right}
+send,(defun c:(){Return}(command ""){Return}(princ){Return}){Up}{Up}{Up}{Right}{Right}{Right}{Right}{Right}{Right}{Right}{Right}
 return
 
 ; sends long date for changelog
