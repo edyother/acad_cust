@@ -1586,3 +1586,8 @@
 (command "find")
 (princ)
 )
+
+(defun c:jt()
+(command "justifytext")
+(princ)
+)
