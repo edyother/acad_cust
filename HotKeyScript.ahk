@@ -1,3 +1,9 @@
+Run Notepad++
+Run Chrome
+Run explorer.exe "C:\Users\Ed Yother\Temp\Project Shortcuts"
+Run explorer.exe "C:\Users\Ed Yother\Temp"
+return
+
 ; first mouse button sends a number. I use for moving objects to same elevation
 XButton1::
 Send, {Backspace}211.00027820{Space}
