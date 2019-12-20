@@ -1476,6 +1476,16 @@
 (princ)
 )
 
+(defun c:xcn()
+(command "xclipframe" "on")
+(princ)
+)
+
+(defun c:xcf()
+(command "xclipframe" "off")
+(princ)
+)
+
 (defun c:ds()
 (command "dist")
 (princ)
