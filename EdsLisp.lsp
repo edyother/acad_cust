@@ -147,7 +147,6 @@
 (princ)
 )
 
-
 ;lock all viewports in current page layout.
 (defun c:lv()
 (command "-vports" "lock" "on" "all" "")
@@ -1401,9 +1400,9 @@
 (setq p5 (list p4 2 0))
 (command "ucs" "3p" p1 p2 "")
 (command "rectangle" "0,0" (list 2 r1)"")
-(command "mirror" (entlast) "m2p" "0,0" p4 "@0,1")
+;(command "mirror" (entlast) "m2p" "0,0" p4 "@0,1")
 (command "arc" p4 "c" "0,0" "angle" "90")
-(command "mirror" (entlast) "m2p" "0,0" p4 "@0,1")
+;(command "mirror" (entlast) "m2p" "0,0" p4 "@0,1")
 (command "osmode" "6591")
 (command "ucs" "world")
 (command "clayer" "ab-wall")

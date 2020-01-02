@@ -37,6 +37,8 @@ dir | Rename-item -NewName {$_.name -replace '_4','_1.32'}
 dir | Rename-item -NewName {$_.name -replace "-NUMBER-","C2019020"}
 dir | Rename-item -NewName {$_.name -replace "P-NUM","C2019060"}
 dir | Rename-item -NewName {$_.name -replace "P-NUM","A2019063"}
+dir | Rename-item -NewName {$_.name -replace "P-NUM","C2019081"}
+dir | Rename-item -NewName {$_.name -replace "C2019081","A2019.081"}
 
 dir | Rename-item -NewName {$_.name -replace '__','_'}
 

@@ -96,3 +96,10 @@ return
 ^!t::
 Run EXCEL.EXE "G:\General KJG\Time Sheets\Ed\Templates\TimesheetMath.xlsx"
 return
+
+;opens Notepad++
+^!n::
+Run Notepad++
+
+^!w::
+Run "C:\Program Files\Process Hacker 2\ProcessHacker.exe"
