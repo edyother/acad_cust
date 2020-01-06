@@ -94,7 +94,7 @@ return
 
 ; opens my timesheet template excel file
 ^!t::
-Run EXCEL.EXE "G:\General KJG\Time Sheets\Ed\Templates\TimesheetMath.xlsx"
+Run scalc.exe "G:\General KJG\Time Sheets\Ed\Templates\TimesheetMath.xlsx"
 return
 
 ;opens Notepad++
