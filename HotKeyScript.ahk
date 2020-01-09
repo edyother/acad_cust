@@ -94,12 +94,19 @@ return
 
 ; opens my timesheet template excel file
 ^!t::
-Run scalc.exe "G:\General KJG\Time Sheets\Ed\Templates\TimesheetMath.xlsx"
+Run excel.exe "G:\General KJG\Time Sheets\Ed\Templates\TimesheetMath.xlsx"
 return
 
 ;opens Notepad++
 ^!n::
 Run Notepad++
+return
 
 ^!w::
 Run "C:\Program Files\Process Hacker 2\ProcessHacker.exe"
+return
+
+^`::
+send, be{enter}
+send, q2{enter}
+return

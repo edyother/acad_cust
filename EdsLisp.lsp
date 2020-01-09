@@ -1,3 +1,6 @@
+
+(command "attdia" "0")(princ)
+
 (command "osmode" "6591")(princ)
 
 ;makes the fillet command work again
@@ -1525,6 +1528,11 @@
 (princ)
 )
 
+(defun c:rc()
+(command "refset")
+(princ)
+)
+
 (defun c:lf()
 (command "layoff")
 (princ)
@@ -1598,5 +1606,17 @@
 
 (defun c:jt()
 (command "justifytext")
+(princ)
+)
+
+(defun c:r()
+(command "regenall")
+(princ)
+)
+(defun c:q2()
+(setq KillMe(ssget))
+(command "erase" KillMe "")
+(c:00)
+(command "bclose" "")
 (princ)
 )
