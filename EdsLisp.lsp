@@ -1,4 +1,3 @@
-
 (command "attdia" "0")(princ)
 
 (command "osmode" "6591")(princ)
@@ -487,6 +486,13 @@
 (defun c:pts()
 (command "-layer" "color" "7" "G-Anno-Ttlb" "")
 (command "_script" "plotsettings.scr")
+(princ)
+)
+
+;set plot setting for current layout
+(defun c:pte()
+(command "-layer" "color" "7" "G-Anno-Ttlb" "")
+(command "_script" "plotsettingsepcon.scr")
 (princ)
 )
 
@@ -1235,10 +1241,10 @@
 ;Draw Window
 (defun c:dw()
 (command "osmode" "3")
-(command "clayer" "ab-window")
+(command "clayer" "A-Glaz-Existing")
 (command "rectang" pause pause)
 (command "rectang" "@" pause)
-(command "clayer" "ab-wall")
+(command "clayer" "A-wall-interior")
 (c:65)
 (princ)
 )
@@ -1391,7 +1397,7 @@
 
 ;draws a door on the AB-Door layer by picking the two corners of the door opening
 (defun c:fd()
-(command "clayer" "ab-door")
+(command "clayer" "a-door-existing")
 (command "osmode" "1")
 (setq pa (getpoint))
 (setq pb (getpoint))
@@ -1402,13 +1408,13 @@
 (setq p4 (list r1 0))
 (setq p5 (list p4 2 0))
 (command "ucs" "3p" p1 p2 "")
-(command "rectangle" "0,0" (list 2 r1)"")
-;(command "mirror" (entlast) "m2p" "0,0" p4 "@0,1")
+(command "rectangle" "0,0" (list 2 r1))
+;(command "mirror" (entlast) "_m2p" "0,0" p4 "@0,1")
 (command "arc" p4 "c" "0,0" "angle" "90")
-;(command "mirror" (entlast) "m2p" "0,0" p4 "@0,1")
+;(command "mirror" (entlast) "_m2p" "0,0" p4 "@0,1")
 (command "osmode" "6591")
 (command "ucs" "world")
-(command "clayer" "ab-wall")
+(command "clayer" "A-wall-interior")
 (princ)
 )
 
@@ -1618,5 +1624,12 @@
 (command "erase" KillMe "")
 (c:00)
 (command "bclose" "")
+(princ)
+)
+
+;close blocks pallet
+
+(defun c:bvc()
+(command "blockspalletclose")
 (princ)
 )

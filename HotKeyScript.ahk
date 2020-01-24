@@ -4,10 +4,13 @@ Run explorer.exe "C:\Users\Ed Yother\Temp\Project Shortcuts"
 Run explorer.exe "C:\Users\Ed Yother\Temp"
 return
 
-; first mouse button sends a number. I use for moving objects to same elevation
-XButton1::
-Send, {Backspace}211.00027820{Space}
-return
+;first mouse button sends a number. I use for moving objects to same elevation
+;XButton1::
+;Send, {Backspace}211.00027820{Space}
+;return
+
+;first mouse button close tab
+XButton1::^w
 
 ; second mouse button sends 0,0,0
 XButton2::
