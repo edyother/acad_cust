@@ -113,3 +113,7 @@ return
 send, be{enter}
 send, q2{enter}
 return
+
+^!c::
+run "C:\Program Files (x86)\SpeedCrunch\speedcrunch.exe"
+return
