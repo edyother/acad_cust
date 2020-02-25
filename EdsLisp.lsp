@@ -10,11 +10,11 @@
 
 ;change layer to 0 then choose file to xref and insert at 0,0,0 and zoom to extents.
 (defun c:ix()
-	(command "filedia" "0")
-	(command "clayer" "0")
-	(command "-xref" "o" pause "0,0,0" "1" "1" "0")
-	(command "zoom" "extents")
-	(command "filedia" "1")
+(command "filedia" "0")
+(command "clayer" "0")
+(command "-xref" "o" pause "0,0,0" "1" "1" "0")
+(command "zoom" "extents")
+(command "filedia" "1")
 (princ)
 )
 
@@ -39,7 +39,7 @@
 )
 
 ;Load EdsLisp
-;You'll need to change the filename to be yours. If it doesn't work you might have to change the folder it's in to be in Autocad's searchable path? Or you might be able to get away with making the filename include the complete path. 
+;You'll need to change the filename to be yours. If it doesn't work you might have to change the folder it's in to be in Autocad's searchable path? Or you might be able to get away with making the filename include the complete path.
 (defun c:lel()
 (load "edslisp.lsp")
 (princ)
@@ -93,10 +93,10 @@
 
 ;allows you to change all layers of one color to another color
 (defun c:colorchange (/ c1 c2 )
-    (vl-load-com)
-    (setq c1 (getint " what is the original color: ") c2 (getint " what is the new color: "))
-    (vlax-for layer (vla-get-layers (vla-get-activedocument (vlax-get-acad-object)))(if (= c1 (vla-get-color layer))(vla-put-color layer c2)))
-    (prin1)
+(vl-load-com)
+(setq c1 (getint " what is the original color: ") c2 (getint " what is the new color: "))
+(vlax-for layer (vla-get-layers (vla-get-activedocument (vlax-get-acad-object)))(if (= c1 (vla-get-color layer))(vla-put-color layer c2)))
+(prin1)
 )
 
 ;zoom to 24x36 sheet
@@ -181,20 +181,20 @@
 
 ;enter "lockvp" to lock all viewports in all page layouts
 (defun c:lockvp()
-	(foreach layout(layoutlist)
-		(setvar "ctab" layout)
-		(command "pspace")
-		(command "-vports" "lock" "on" "all" "")
-	)
+(foreach layout(layoutlist)
+(setvar "ctab" layout)
+(command "pspace")
+(command "-vports" "lock" "on" "all" "")
+)
 (princ)
 )
 
 ;enter "ulockvp" to unlock all viewports in all page layouts
 (defun c:ulockvp()
-	(foreach layout(layoutlist)
-		(setvar "ctab" layout)
-		(command "-vports" "lock" "off" "all" "")
-	)
+(foreach layout(layoutlist)
+(setvar "ctab" layout)
+(command "-vports" "lock" "off" "all" "")
+)
 (princ)
 )
 
@@ -291,54 +291,54 @@
 
 ;paste whatever is in clipboard at 0,0,0 on each page layout
 (defun c:99()
-	(foreach layout(layoutlist)
-		(setvar "ctab" layout)
-		(c:00)
-	)
+(foreach layout(layoutlist)
+(setvar "ctab" layout)
+(c:00)
+)
 (princ)
 )
 
 ;purge and set up new layers for as built drawing
 (defun c:asbl
 ()
-	;(command "-xref" "detach" "*")
-	(command "-purge" "layers" "*" "no")
-	(command "-purge" "blocks" "*" "no")
-	(command "-layer" 
-		"new" "ab-image" 
-		"new" "ab-wall" 
-			"color" "80" "ab-wall" 
-		"new" "ab-above" 
-			"color" "14" "ab-above" 
-			"ltype" "hidden" "ab-above" 
-		"new" "ab-below" 
-			"color" "10" "ab-below" 
-			"ltype" "hidden" "ab-below" 
-		"new" "ab-elec" 
-			"color" "9" "ab-elec" 
-		"new" "ab-stair-rail" 
-			"color" "2" "ab-stair-rail" 
-		"new" "ab-door" 
-			"color" "1" "ab-door" 
-		"new" "ab-floor" 
-			"color" "11" "ab-floor" 
-		"new" "ab-window" 
-			"color" "12" "ab-window" 
-		"new" "ab-roof" 
-			"color" "magenta" "ab-roof" 
-		"new" "ab-fixt" 
-			"color" "190" "ab-fixt"
-		"new" "ab-column" 
-			"color" "4" "ab-column"
-		"new" "ab-beam" 
-			"color" "13" "ab-beam"
-			"ltype" "center" "ab-beam"
-		"new" "ab-iden" 
-			"color" "4" "ab-iden"
-			"plot" "no" "ab-iden"
-		"new" "ab-anno" 
-			"color" "51" "ab-anno"
-	"")
+;(command "-xref" "detach" "*")
+(command "-purge" "layers" "*" "no")
+(command "-purge" "blocks" "*" "no")
+(command "-layer"
+"new" "ab-image"
+"new" "ab-wall"
+"color" "80" "ab-wall"
+"new" "ab-above"
+"color" "14" "ab-above"
+"ltype" "hidden" "ab-above"
+"new" "ab-below"
+"color" "10" "ab-below"
+"ltype" "hidden" "ab-below"
+"new" "ab-elec"
+"color" "9" "ab-elec"
+"new" "ab-stair-rail"
+"color" "2" "ab-stair-rail"
+"new" "ab-door"
+"color" "1" "ab-door"
+"new" "ab-floor"
+"color" "11" "ab-floor"
+"new" "ab-window"
+"color" "12" "ab-window"
+"new" "ab-roof"
+"color" "magenta" "ab-roof"
+"new" "ab-fixt"
+"color" "190" "ab-fixt"
+"new" "ab-column"
+"color" "4" "ab-column"
+"new" "ab-beam"
+"color" "13" "ab-beam"
+"ltype" "center" "ab-beam"
+"new" "ab-iden"
+"color" "4" "ab-iden"
+"plot" "no" "ab-iden"
+"new" "ab-anno"
+"color" "51" "ab-anno"
+"")
 (command "clayer" "ab-wall")
 (command "insert" "kjg north arrow=kjg north arrow.dwg" #nil)
 (princ)
@@ -365,35 +365,35 @@
 
 ;setup electrical layers purge all unused layers. purge all unused blocks. insert all the electrical common layers. insert the version of the kjg north arrow that i fixed.
 (defun c:sue()
-	(command "-purge" "layers" "*" "no")
-	(command "-purge" "blocks" "*" "no")
-	(c:mz)
-	(command "insert" "elec common layers=elec common layers.dwg" #nil)
-	(command "insert" "kjg north arrow=kjg north arrow.dwg" #nil)
-	(command "insert" "h21=h21.dwg" #nil)
-	(command "insert" "c-notewheel=c-notewheel.dwg" #nil)
+(command "-purge" "layers" "*" "no")
+(command "-purge" "blocks" "*" "no")
+(c:mz)
+(command "insert" "elec common layers=elec common layers.dwg" #nil)
+(command "insert" "kjg north arrow=kjg north arrow.dwg" #nil)
+(command "insert" "h21=h21.dwg" #nil)
+(command "insert" "c-notewheel=c-notewheel.dwg" #nil)
 (princ)
 )
 
-;For IU Projects 
+;For IU Projects
 ;setup electrical layers purge all unused layers. purge all unused blocks. insert all the electrical common layers. insert the version of the kjg north arrow that i fixed.
 (defun c:suiu()
-	(command "-purge" "layers" "*" "no")
-	(command "-purge" "blocks" "*" "no")
-	(c:mz)
-	(command "insert" "IU_Electrical=IU_Electrical.dwg" #nil)
-	(command "insert" "kjg north arrow=kjg north arrow.dwg" #nil)
-	(command "insert" "h21=h21.dwg" #nil)
-	(command "insert" "c-notewheel=c-notewheel.dwg" #nil)
+(command "-purge" "layers" "*" "no")
+(command "-purge" "blocks" "*" "no")
+(c:mz)
+(command "insert" "IU_Electrical=IU_Electrical.dwg" #nil)
+(command "insert" "kjg north arrow=kjg north arrow.dwg" #nil)
+(command "insert" "h21=h21.dwg" #nil)
+(command "insert" "c-notewheel=c-notewheel.dwg" #nil)
 (princ)
 )
 
 ;setup elevation layers. purge all unused layers. purge all unused blocks. insert all the elevation layers.
 (defun c:elevla()
-	(command "-purge" "layers" "*" "no")
-	(command "-purge" "blocks" "*" "no")
-	(c:mz)
-	(command "insert" "eElevationLayers=ElevationLayers.dwg" #nil)
+(command "-purge" "layers" "*" "no")
+(command "-purge" "blocks" "*" "no")
+(c:mz)
+(command "insert" "eElevationLayers=ElevationLayers.dwg" #nil)
 (princ)
 )
 
@@ -619,7 +619,7 @@
 (princ)
 )
 
-;Pick UCS and place meter location at mid of chosen points 
+;Pick UCS and place meter location at mid of chosen points
 (defun c:11()
 (command "osmode" "1")
 (setq pa (getpoint))
@@ -633,7 +633,7 @@
 (princ)
 )
 
-;Pick UCS and place meter bank location at mid of chosen points 
+;Pick UCS and place meter bank location at mid of chosen points
 (defun c:121()
 (command "osmode" "1")
 (setq pa (getpoint))
@@ -647,7 +647,7 @@
 (princ)
 )
 
-;Pick UCS and place meter bank location at mid of chosen points 
+;Pick UCS and place meter bank location at mid of chosen points
 (defun c:122()
 (command "osmode" "1")
 (setq pa (getpoint))
@@ -832,30 +832,30 @@
 
 ;Layer settings for electrical sheets using the Unit Plan Xrefs. From Bloomington.
 (defun c:unitla()
-	(setq gfreeze
-		"\"*|A-Mill-Cabs-Hidn,*|SCREEN-B,*|PLAN NORTH,*|A-Clng-Bkhd,*|A-FLOR-ADA\"")
-	(setq vfreeze
-		"\"defpoints,*|M-Hvac-Duct-Retn\"")
-	(setq color80
-		"\"*|E-NOTE\"")
-	(setq color50
-		"\"*|E-LITE-EQPM-N-D,*|*E-LITE-CLNG-N-D,*|E-LITE-WALL-N-D\"")
-	(setq color240
-		"\"*|E-FIRE-EQPM-N-D\"")
-	(setq color210
-		"\"*|E-POWR-EQPM-N-D\"")
-	(setq color252
-		"\"*|A-Wall-Hidn,*|A-Wall-Hidn-GypB,*|A-APPL,*|A-APPL-ANNO,*|M-HVAC-EQPT,*|A-Flor-Stair-Riser,*|A-ABOVE,*|A-MILL-UPPR\"")
-	(setq color250
-		"\"*|M-Hvac-Duct-Retn\"")
-	(command "vplayer" "freeze" gfreeze "all" "freeze" vfreeze "x" "")
-	(command "-layer" "freeze" gfreeze "")
-	(command "-layer" "color" "80" color80
-		"color" "240" color240
-		"color" "210" color210
-		"color" "252" color252
-		"color" "250" color250
-		"color" "50" color50 "")
+(setq gfreeze
+"\"*|A-Mill-Cabs-Hidn,*|SCREEN-B,*|PLAN NORTH,*|A-Clng-Bkhd,*|A-FLOR-ADA\"")
+(setq vfreeze
+"\"defpoints,*|M-Hvac-Duct-Retn\"")
+(setq color80
+"\"*|E-NOTE\"")
+(setq color50
+"\"*|E-LITE-EQPM-N-D,*|*E-LITE-CLNG-N-D,*|E-LITE-WALL-N-D\"")
+(setq color240
+"\"*|E-FIRE-EQPM-N-D\"")
+(setq color210
+"\"*|E-POWR-EQPM-N-D\"")
+(setq color252
+"\"*|A-Wall-Hidn,*|A-Wall-Hidn-GypB,*|A-APPL,*|A-APPL-ANNO,*|M-HVAC-EQPT,*|A-Flor-Stair-Riser,*|A-ABOVE,*|A-MILL-UPPR\"")
+(setq color250
+"\"*|M-Hvac-Duct-Retn\"")
+(command "vplayer" "freeze" gfreeze "all" "freeze" vfreeze "x" "")
+(command "-layer" "freeze" gfreeze "")
+(command "-layer" "color" "80" color80
+"color" "240" color240
+"color" "210" color210
+"color" "252" color252
+"color" "250" color250
+"color" "50" color50 "")
 (princ)
 )
 
@@ -882,12 +882,12 @@
 ;COPIES NAME OF CURRENT LAYER TO CLIPBOARD
 (defun c:cpla()
 (command "laymcur")
-	(vlax-invoke
-		(vlax-get (vlax-get (vlax-create-object "htmlfile") 'ParentWindow) 'ClipBoardData)
-		'setData
-		"TEXT"
-		(getvar 'clayer)
-	)
+(vlax-invoke
+(vlax-get (vlax-get (vlax-create-object "htmlfile") 'ParentWindow) 'ClipBoardData)
+'setData
+"TEXT"
+(getvar 'clayer)
+)
 (command "clayer" "0")
 (princ)
 )
@@ -966,7 +966,7 @@
 )
 
 
-;divides a line or polyline into equial sections that are less than 12.5' each. for the purpose of place objects less than 25' apart. 
+;divides a line or polyline into equial sections that are less than 12.5' each. for the purpose of place objects less than 25' apart.
 ;so far I still have to select the object twice
 (defun c:dv25()
 (c:p3)
@@ -999,14 +999,14 @@
 (princ)
 )
 
-;Returns the view and UCS to the normal TOP view. 
+;Returns the view and UCS to the normal TOP view.
 (defun c:top()
 (command "ucs" "world")
 (command "plan" "current")
 (princ)
 )
 
-;rotates the model space view to SOUTHWEST ISOMETRIC but leaves the UCS to WORLD. 
+;rotates the model space view to SOUTHWEST ISOMETRIC but leaves the UCS to WORLD.
 ;Handy for finding objects in a 2D drawing that are in a plane other the "Z" elevation of "0"
 (defun c:iso()
 (command "-view" "swiso")
@@ -1081,36 +1081,36 @@
 
 
 (defun C:P9(/ I LW P1 P2 P3)
- (vl-load-com)
- (or doc (setq doc (vla-get-ActiveDocument (vlax-get-acad-object))))
- (if (and (setq lw (entsel "\n Select segment in a polyline. "))
-          (= (cdr (assoc 0 (entget (car lw)))) "LWPOLYLINE")
-     ) ;_  and
-  (progn
-   (setq i  (fix (vlax-curve-getParamAtPoint
-                  (car lw)
-                  (vlax-curve-getClosestPointTo (car lw) (cadr lw))
-                 ) ;_  vlax-curve-getParamAtPoint
-            ) ;_  fix
-         p1 (vlax-curve-getPointAtParam (car lw) i)
-         p3 (vlax-curve-getPointAtParam (car lw) (1+ i))
-         lw (vlax-ename->vla-object (car lw))
-   ) ;_  setq
-   (princ "\n Set visually curvature of a segment. ")
-   (vla-StartUndoMark doc)
-   (while (and (setq p2 (grread 5)) (= (car p2) 5))
-    (vla-SetBulge
-     lw
-     i
-     ((lambda (a) (/ (sin a) (cos a)))
-      (/ (- (angle (cadr p2) p3) (angle p1 (cadr p2))) 2.)
-     )
-    ) ;_  vla-SetBulge
-   ) ;_  while
-   (vla-EndUndoMark doc)
-  ) ;_  progn
-  (princ "\n It is select nothing or object not a polyline. ")
- ) ;_  if
+(vl-load-com)
+(or doc (setq doc (vla-get-ActiveDocument (vlax-get-acad-object))))
+(if (and (setq lw (entsel "\n Select segment in a polyline. "))
+(= (cdr (assoc 0 (entget (car lw)))) "LWPOLYLINE")
+) ;_  and
+(progn
+(setq i  (fix (vlax-curve-getParamAtPoint
+(car lw)
+(vlax-curve-getClosestPointTo (car lw) (cadr lw))
+) ;_  vlax-curve-getParamAtPoint
+) ;_  fix
+p1 (vlax-curve-getPointAtParam (car lw) i)
+p3 (vlax-curve-getPointAtParam (car lw) (1+ i))
+lw (vlax-ename->vla-object (car lw))
+) ;_  setq
+(princ "\n Set visually curvature of a segment. ")
+(vla-StartUndoMark doc)
+(while (and (setq p2 (grread 5)) (= (car p2) 5))
+(vla-SetBulge
+lw
+i
+((lambda (a) (/ (sin a) (cos a)))
+(/ (- (angle (cadr p2) p3) (angle p1 (cadr p2))) 2.)
+)
+) ;_  vla-SetBulge
+) ;_  while
+(vla-EndUndoMark doc)
+) ;_  progn
+(princ "\n It is select nothing or object not a polyline. ")
+) ;_  if
 ) ;_  defun
 
 ;explode all groups
@@ -1309,7 +1309,7 @@
 (princ)
 )
 
-; 
+;
 (defun c:tg()
 (setq pa (getpoint))
 (setq pb (getpoint))
@@ -1521,7 +1521,7 @@
 
 (defun c:qs()
 (command "qselect")
-(princ) 
+(princ)
 )
 
 (defun c:re()
@@ -1534,7 +1534,7 @@
 (princ)
 )
 
-(defun c:rc()
+(defun c:rs()
 (command "refset")
 (princ)
 )
@@ -1631,5 +1631,15 @@
 
 (defun c:bvc()
 (command "blockspalletclose")
+(princ)
+)
+
+(defun c:aa()
+(command "mleaderedit")
+(princ)
+)
+
+(defun c:ra()
+(command "mleaderedit" "r")
 (princ)
 )
