@@ -1,3 +1,5 @@
+(command "copymode" "0")(princ)
+
 (command "attdia" "0")(princ)
 
 (command "osmode" "6591")(princ)
@@ -1602,6 +1604,11 @@ i
 
 (defun c:d()
 (command "dimlinear")
+(princ)
+)
+
+(defun c:dc()
+(command "dimcontinue")
 (princ)
 )
 

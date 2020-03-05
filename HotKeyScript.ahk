@@ -1,3 +1,5 @@
+#InstallKeybdHook
+
 ^!p::
 Run explorer.exe "C:\Users\Ed Yother\Temp"
 return
@@ -77,6 +79,7 @@ Run Notepad++
 Run Chrome
 Run explorer.exe "C:\Users\Ed Yother\Temp\Project Shortcuts"
 Run explorer.exe "C:\Users\Ed Yother\Temp"
+run speedcrunch.exe
 return
 
 ; adds stuff to my timesheet csv file
@@ -114,4 +117,8 @@ return
 
 ^!c::
 run "C:\Program Files (x86)\SpeedCrunch\speedcrunch.exe"
+return
+
+^\::
+send, *12{NumPadAdd}
 return
