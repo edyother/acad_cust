@@ -1243,10 +1243,10 @@ i
 ;Draw Window
 (defun c:dw()
 (command "osmode" "3")
-(command "clayer" "A-Glaz-Existing")
+(command "clayer" "a-glazing")
 (command "rectang" pause pause)
 (command "rectang" "@" pause)
-(command "clayer" "A-wall-interior")
+(command "clayer" "a-wall-interior")
 (c:65)
 (princ)
 )
@@ -1287,7 +1287,8 @@ i
 
 ;image attach
 (defun c:iat()
-(command "clayer" "ab-image")
+(command "layer" "n" "image" "")
+(command "clayer" "image")
 (command "imageattach")
 (princ)
 )
@@ -1399,7 +1400,7 @@ i
 
 ;draws a door on the AB-Door layer by picking the two corners of the door opening
 (defun c:fd()
-(command "clayer" "a-door-existing")
+(command "clayer" "a-door")
 (command "osmode" "1")
 (setq pa (getpoint))
 (setq pb (getpoint))
@@ -1416,7 +1417,7 @@ i
 ;(command "mirror" (entlast) "_m2p" "0,0" p4 "@0,1")
 (command "osmode" "6591")
 (command "ucs" "world")
-(command "clayer" "A-wall-interior")
+(command "clayer" "a-wall-interior")
 (princ)
 )
 

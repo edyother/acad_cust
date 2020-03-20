@@ -1,4 +1,6 @@
 #InstallKeybdHook
+#InstallMouseHook
+#KeyHistory
 
 ^!p::
 Run explorer.exe "C:\Users\Ed Yother\Temp"
@@ -79,7 +81,7 @@ Run Notepad++
 Run Chrome
 Run explorer.exe "C:\Users\Ed Yother\Temp\Project Shortcuts"
 Run explorer.exe "C:\Users\Ed Yother\Temp"
-run speedcrunch.exe
+Run "C:\Program Files (x86)\SpeedCrunch\speedcrunch.exe"
 return
 
 ; adds stuff to my timesheet csv file
@@ -121,4 +123,16 @@ return
 
 ^\::
 send, *12{NumPadAdd}
+return
+
+^Volume_Up::
+send,{Volume_Up}
+return
+
+^Volume_Down::
+send,{Volume_Down}
+return
+
+^Volume_Mute::
+send,{Volume_Mute}
 return
