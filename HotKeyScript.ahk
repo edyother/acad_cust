@@ -12,7 +12,22 @@ return
 ;return
 
 ;first mouse button close tab
-XButton1::^w
+;XButton1::^w
+
+;first mouse button add project number to sheet set file names
+;XButton1::
+;send, {Tab}{Tab}{Tab}{Home}A2020022 - {Enter}
+;return
+
+;first mouse button add project number to sheet set file names
+;XButton1::
+;send,{Tab}{Tab}{Tab}{End}{Left}{Left}{Left}{Left}{Space}A2020022{Enter}
+;return
+
+;first mouse button add project number to sheet set file names
+XButton1::
+send,mz{space}ix{space}G:\kjg architecture\2020 projects\a2020.022 uhaul bristol tn renovation\Autocad\PHASE 3\LNWK RCP A2020022.dwg{enter}zc{space}
+return
 
 ; second mouse button sends 0,0,0
 XButton2::

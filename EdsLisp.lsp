@@ -1393,8 +1393,9 @@ i
 (princ)
 )
 
+;attsync
 (defun c:at()
-(command "attsync" "select" pause "")
+(command "attsync" "n" "*")
 (princ)
 )
 
@@ -1409,12 +1410,14 @@ i
 (setq r1 (distance p1 p2))
 (setq p3 (list 0 r1))
 (setq p4 (list r1 0))
-(setq p5 (list p4 2 0))
+;draw first door
 (command "ucs" "3p" p1 p2 "")
 (command "rectangle" "0,0" (list 2 r1))
-;(command "mirror" (entlast) "_m2p" "0,0" p4 "@0,1")
 (command "arc" p4 "c" "0,0" "angle" "90")
-;(command "mirror" (entlast) "_m2p" "0,0" p4 "@0,1")
+;draw second door
+(command "arc" "0,0" "c" p4 "angle" "-90")
+(command "ucs" p4 "")
+(command "rectangle" "-2,0" (list 0 r1))
 (command "osmode" "6591")
 (command "ucs" "world")
 (command "clayer" "a-wall-interior")
@@ -1450,6 +1453,7 @@ i
 (c:be)
 (c:00)
 (command "bclose" "")
+(command "attsync" "n" "*")
 (princ)
 )
 

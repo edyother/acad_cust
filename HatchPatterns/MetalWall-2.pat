@@ -1,0 +1,3 @@
+*MetalWall-2, Vertical LINES TO MATCH CORUGATED STEEL WALL
+90,	1,0,		0,12
+90,	2,0,		0,12
