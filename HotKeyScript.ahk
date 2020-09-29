@@ -100,8 +100,21 @@ Run "C:\Program Files (x86)\SpeedCrunch\speedcrunch.exe"
 return
 
 ; adds stuff to my timesheet csv file
+;>^p::
+;send,{Space}Number,Project Name
+;return
+
+; Open and cleanup timesheet csv file
 >^p::
-send,{Space}Number,Project Name
+send,+{f10}
+sleep, 500
+send, n{enter}
+sleep, 500
+send, ^+'
+sleep, 500
+send, ^s
+sleep, 500
+send, ^w
 return
 
 ; fills in revision info in titleblock properties
@@ -150,4 +163,39 @@ return
 
 ^Volume_Mute::
 send,{Volume_Mute}
+return
+
+!#m::
+send,^a 
+send,Main Image{enter}
+return
+
+!#n::
+send,^a 
+send,Gallery{enter}
+return
+
+!#t::
+send,^a 
+send,Title Bar{enter}
+return
+
+!#p::
+send,^a 
+send,Project List{enter}
+return
+
+!#d::
+send,^a 
+send,Description{enter}
+return
+
+!#s::
+send,^a 
+send,Spacer{enter}
+return
+
+!#c::
+send,^a 
+send,Main Content{enter}
 return
