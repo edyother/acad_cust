@@ -107,14 +107,15 @@ return
 ; Open and cleanup timesheet csv file
 >^p::
 send,+{f10}
-sleep, 500
+sleep, 2000
 send, n{enter}
-sleep, 500
+sleep, 2000
 send, ^+'
-sleep, 500
+sleep, 2000
 send, ^s
-sleep, 500
+sleep, 2000
 send, ^w
+send, !{TAB}
 return
 
 ; fills in revision info in titleblock properties
