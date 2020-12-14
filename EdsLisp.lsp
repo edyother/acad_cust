@@ -40,7 +40,7 @@
 (princ)
 )
 
-;Load EdsLisp
+;Reloads this lisp file
 ;You'll need to change the filename to be yours. If it doesn't work you might have to change the folder it's in to be in Autocad's searchable path? Or you might be able to get away with making the filename include the complete path.
 (defun c:lel()
 (load "edslisp.lsp")
@@ -1631,6 +1631,8 @@ i
 (command "regenall")
 (princ)
 )
+
+;delete something from a block and close block editor
 (defun c:q2()
 (setq KillMe(ssget))
 (command "erase" KillMe "")

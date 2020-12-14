@@ -51,6 +51,8 @@ dir | Rename-item -NewName {$_.name -replace '4','_4'}
 dir | Rename-item -NewName {$_.name -replace '8','_8'}
 dir | Rename-item -NewName {$_.name -replace '32','_32'}
 dir | Rename-item -NewName {$_.name -replace '1.20','_1.20'}
+dir | Rename-item -NewName {$_.name -replace 'KJG',''}
+
 
 
 ::To be used in CMD to install ffmpeg
