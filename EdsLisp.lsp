@@ -20,6 +20,7 @@
 (princ)
 )
 
+;opens block editor, changes layer to defpoints, adds a point to block origin, closes block editor
 (defun c:dp0()
 (command "-bedit")
 (c:dp)
