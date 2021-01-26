@@ -4,20 +4,7 @@
 
 ;#### File Explorer Stuff ####
 
-	;paste shortcut and delete shortcut from end of filename
-	;^!.::
-	;send,{MENU}
-	;send,s
-	;send,{ENTER}
-	;send,{F2}
-	;send,{END}
-	;send,^+{LEFT}
-	;send,^+{LEFT}
-	;send,+{LEFT}
-	;send,{DELETE}
-	;send,{ENTER}
-	;return
-	
+
 	; opens file explorer at the server
 	^!g::
 	Run explorer.exe "G:\"
