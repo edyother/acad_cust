@@ -1,0 +1,5 @@
+dir -Recurse | Rename-item -NewName {$_.name -replace ' ',''}
+
+Get-ChildItem -Directory -r -name -include '* *' >'C:\Users\Ed Yother\Temp\DirectoriesWithSpaces.txt'
+
+dir *.0*.rfa
