@@ -1,5 +1,9 @@
 dir -Recurse | Rename-item -NewName {$_.name -replace ' ',''}
+Get-ChildItem | Rename-item -NewName {$_.name -replace ' ',''}
+Get-ChildItem | ForEach-Object BaseName >'C:\Users\Ed Yother\Temp\CurrentDir.txt'
 
 Get-ChildItem -Directory -r -name -include '* *' >'C:\Users\Ed Yother\Temp\DirectoriesWithSpaces.txt'
+
+dir -Recurse >'C:\Users\Ed Yother\Temp\Directories.txt'
 
 dir *.0*.rfa
