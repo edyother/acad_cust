@@ -1,5 +1,5 @@
 # Make list of names before running
-dir -Recurse | Get-ChildItem | Foreach-Object FullName >'C:\Users\Ed Yother\Temp\NamesBefore.txt'
+# dir -Recurse | Get-ChildItem | Foreach-Object FullName >'C:\Users\Ed Yother\Temp\NamesBefore.txt'
 
 # Replace a space followed by a lower case letter with an upper case letter.
 # For converting file names to camel case.
@@ -30,16 +30,16 @@ dir -Recurse | Rename-item -NewName {$_.name -replace ' w','W'}
 dir -Recurse | Rename-item -NewName {$_.name -replace ' x','X'}
 dir -Recurse | Rename-item -NewName {$_.name -replace ' y','Y'}
 dir -Recurse | Rename-item -NewName {$_.name -replace ' z','Z'}
-dir -Recurse | Rename-item -NewName {$_.name -replace ' 0','-0'}
-dir -Recurse | Rename-item -NewName {$_.name -replace ' 1','-1'}
-dir -Recurse | Rename-item -NewName {$_.name -replace ' 2','-2'}
-dir -Recurse | Rename-item -NewName {$_.name -replace ' 3','-3'}
-dir -Recurse | Rename-item -NewName {$_.name -replace ' 4','-4'}
-dir -Recurse | Rename-item -NewName {$_.name -replace ' 5','-5'}
-dir -Recurse | Rename-item -NewName {$_.name -replace ' 6','-6'}
-dir -Recurse | Rename-item -NewName {$_.name -replace ' 7','-7'}
-dir -Recurse | Rename-item -NewName {$_.name -replace ' 8','-8'}
-dir -Recurse | Rename-item -NewName {$_.name -replace ' 9','-9'}
+dir -Recurse | Rename-item -NewName {$_.name -replace ' 0','0'}
+dir -Recurse | Rename-item -NewName {$_.name -replace ' 1','1'}
+dir -Recurse | Rename-item -NewName {$_.name -replace ' 2','2'}
+dir -Recurse | Rename-item -NewName {$_.name -replace ' 3','3'}
+dir -Recurse | Rename-item -NewName {$_.name -replace ' 4','4'}
+dir -Recurse | Rename-item -NewName {$_.name -replace ' 5','5'}
+dir -Recurse | Rename-item -NewName {$_.name -replace ' 6','6'}
+dir -Recurse | Rename-item -NewName {$_.name -replace ' 7','7'}
+dir -Recurse | Rename-item -NewName {$_.name -replace ' 8','8'}
+dir -Recurse | Rename-item -NewName {$_.name -replace ' 9','9'}
 
 # Replace an underscore followed by a lower case letter with an upper case letter.
 # For converting file names to camel case.
@@ -70,16 +70,16 @@ dir -Recurse | Rename-item -NewName {$_.name -replace '_w','W'}
 dir -Recurse | Rename-item -NewName {$_.name -replace '_x','X'}
 dir -Recurse | Rename-item -NewName {$_.name -replace '_y','Y'}
 dir -Recurse | Rename-item -NewName {$_.name -replace '_z','Z'}
-dir -Recurse | Rename-item -NewName {$_.name -replace '_0','-0'}
-dir -Recurse | Rename-item -NewName {$_.name -replace '_1','-1'}
-dir -Recurse | Rename-item -NewName {$_.name -replace '_2','-2'}
-dir -Recurse | Rename-item -NewName {$_.name -replace '_3','-3'}
-dir -Recurse | Rename-item -NewName {$_.name -replace '_4','-4'}
-dir -Recurse | Rename-item -NewName {$_.name -replace '_5','-5'}
-dir -Recurse | Rename-item -NewName {$_.name -replace '_6','-6'}
-dir -Recurse | Rename-item -NewName {$_.name -replace '_7','-7'}
-dir -Recurse | Rename-item -NewName {$_.name -replace '_8','-8'}
-dir -Recurse | Rename-item -NewName {$_.name -replace '_9','-9'}
+dir -Recurse | Rename-item -NewName {$_.name -replace '_0','0'}
+dir -Recurse | Rename-item -NewName {$_.name -replace '_1','1'}
+dir -Recurse | Rename-item -NewName {$_.name -replace '_2','2'}
+dir -Recurse | Rename-item -NewName {$_.name -replace '_3','3'}
+dir -Recurse | Rename-item -NewName {$_.name -replace '_4','4'}
+dir -Recurse | Rename-item -NewName {$_.name -replace '_5','5'}
+dir -Recurse | Rename-item -NewName {$_.name -replace '_6','6'}
+dir -Recurse | Rename-item -NewName {$_.name -replace '_7','7'}
+dir -Recurse | Rename-item -NewName {$_.name -replace '_8','8'}
+dir -Recurse | Rename-item -NewName {$_.name -replace '_9','9'}
 
 # Removing specific things
 #dir -Recurse | Rename-item -NewName {$_.name -replace 'Anno-',''}
