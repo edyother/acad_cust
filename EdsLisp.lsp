@@ -129,7 +129,7 @@
 ;change current layer to 0
 ;save file, and close.
 (defun c:zc()
-(c:gn)
+;(c:gn)
 (command "layerclose")
 (command "layon")
 (c:lockvp)
@@ -1422,6 +1422,34 @@ i
 (command "osmode" "6591")
 (command "ucs" "world")
 (command "clayer" "a-wall-interior")
+(princ)
+)
+
+;draw overhead door
+;(defun c:od()
+;(command "clayer" "a-door")
+;  (command "osmode" "1")
+;  (setq pt1 (getpoint "PT1:"))
+;  (setq pt2 (getpoint "PT2:"))
+;  (command "rectangle" "from" pt1 "@-6,0" "from" pt2 "@6,4")
+;  (command "osmode" "6591")
+;  (princ)
+;)
+
+;draws overhead door
+(defun c:od()
+(command "clayer" "a-door")
+(command "osmode" "1")
+(setq pa (getpoint))
+(setq pb (getpoint))
+(setq p1 (trans pa 1 0))
+(setq p2 (trans pb 1 0))
+(setq d1 (distance p1 p2))
+(setq d2 (+ 6 d1))
+(command "ucs" "3p" p1 p2 "")
+(command "rectangle" (list -6 4) (list d2 0))
+(command "osmode" "6591")
+(command "ucs" "world")
 (princ)
 )
 
