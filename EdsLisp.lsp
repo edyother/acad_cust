@@ -754,6 +754,11 @@
 (princ)
 )
 
+;set offset for 3.5" stud
+(defun c:o3()
+(command "offset" "3.5" "")
+(princ))
+
 ;set offset erase to NO
 (defun c:o0()
 (command "offset" "erase" "no" "" "")
@@ -908,7 +913,7 @@
 )
 
 ;the nex few are for placing electical note pointers. Must use "we" first.
-(defun c:e1()
+(defun c:e3()
 (c:66)
 (command "-insert" "*Enote1" pause "1" "0")
 (c:65)
@@ -924,7 +929,7 @@
 (princ)
 )
 
-(defun c:e3()
+(defun c:e10()
 (c:66)
 (command "-insert" "*Enote3" pause "1" "0")
 (c:65)
@@ -932,7 +937,7 @@
 (princ)
 )
 
-(defun c:e4()
+(defun c:e9()
 (c:66)
 (command "-insert" "*Enote4" pause "1" "0")
 (c:65)
@@ -940,7 +945,7 @@
 (princ)
 )
 
-(defun c:e5()
+(defun c:e7()
 (c:66)
 (command "-insert" "*Enote5" pause "1" "0")
 (c:65)
@@ -948,7 +953,7 @@
 (princ)
 )
 
-(defun c:e6()
+(defun c:e5()
 (c:66)
 (command "-insert" "*Enote6" pause "1" "0")
 (c:65)
@@ -1402,7 +1407,7 @@ i
 
 ;draws a door on the AB-Door layer by picking the two corners of the door opening
 (defun c:fd()
-(command "clayer" "a-door")
+(command "clayer" "a-door-existing")
 (command "osmode" "1")
 (setq pa (getpoint))
 (setq pb (getpoint))
@@ -1684,5 +1689,11 @@ i
 
 (defun c:ra()
 (command "mleaderedit" "r")
+(princ)
+)
+
+(defun c:kp()
+(command "-layer" "off" "pdf" "")
+
 (princ)
 )

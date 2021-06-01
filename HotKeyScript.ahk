@@ -38,8 +38,8 @@
 	return
 	
 	; remap scrollock key to '
-	ScrollLock::'
-	return
+	;ScrollLock::'
+	;return
 	
 	;first mouse button sends a number. I use for moving objects to same elevation
 	;XButton1::
@@ -137,9 +137,13 @@
 	;export excel to pdf
 	^!e::
 	send,{ALT}
+	sleep, 3000
 	send,f
+	sleep, 3000
 	send,e
+	sleep, 3000
 	send,a
+	sleep, 3000
 	send,{ENTER}
 	
 	; adds stuff to my timesheet csv file
@@ -150,17 +154,17 @@
 	; Open and cleanup timesheet csv file
 	>^p::
 	send,+{f10}
-	sleep, 2000
+	sleep, 3000
 	send, n{enter}
-	sleep, 2000
+	sleep, 3000
 	send, ^+'
-	sleep, 2000
+	sleep, 3000
 	send, ^s
-	sleep, 2000
+	sleep, 3000
 	send, ^w
-	sleep, 2000
+	sleep, 3000
 	send, !{TAB}
-	sleep, 2000
+	sleep, 3000
 	send, {enter}
 	return
 
@@ -192,4 +196,3 @@
 	^\::
 	send, *12{NumPadAdd}
 	return
-	
