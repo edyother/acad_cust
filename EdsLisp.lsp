@@ -42,9 +42,8 @@
 )
 
 ;Reloads this lisp file
-;You'll need to change the filename to be yours. If it doesn't work you might have to change the folder it's in to be in Autocad's searchable path? Or you might be able to get away with making the filename include the complete path.
 (defun c:lel()
-(load "edslisp.lsp")
+(load "EdsLisp.lsp")
 (princ)
 )
 
@@ -122,7 +121,7 @@
 
 ;turn on all the layers
 ;lock all the viewports
-;rotate model space to be WCS
+;rotate model space to the WCS
 ;turn attribute dialogs back on
 ;zoom all layouts to 24x36 sheet
 ;set pdmode to 3
@@ -301,6 +300,17 @@
 (princ)
 )
 
+(defun c:abv()
+(command "-layer" "new" "a-above"
+"color" "1" "a-above"
+"ltype" "hidden" "a-above"
+"set" "a-above"
+"")
+(princ)
+)
+
+
+
 ;purge and set up new layers for as built drawing
 (defun c:asbl
 ()
@@ -350,6 +360,11 @@
 ;select everything in a drawing and rotate it 90 degrees counter clockwise
 (defun c:r9()
 (command "rotate" "all" "" "0,0,0" "90")
+(princ)
+)
+
+(defun c:r1()
+(command "rotate" (ssget)"" pause "180")
 (princ)
 )
 
@@ -426,12 +441,6 @@
 (command "osmode" "65")
 (princ)
 )
-
-(defun c:r1()
-(command "rotate" (ssget)"" pause "180")
-(princ)
-)
-
 
 ;lock all the viewports, set xrefoverride to "1" and make all the xref layers gray except for Seal and Logos
 (defun c:xgray()
@@ -534,6 +543,15 @@
 (defun c:vs()
 (command "-layer" "new" "g-anno-nplt" "color" "4" "g-anno-nplt" "set" "g-anno-nplt" "")
 (command "mview")
+(princ)
+)
+
+;change layer to g-anno-nplt and make viewport for 24x36 paper
+(defun c:vvs()
+(c:66)
+(command "-layer" "new" "g-anno-nplt" "color" "4" "g-anno-nplt" "set" "g-anno-nplt" "")
+(command "mview" "1.5,.9375" "32.0625,23.0625")
+(c:65)
 (princ)
 )
 
@@ -750,7 +768,7 @@
 ;set offset for door frames
 (defun c:o2()
 (command "offset" "erase" "yes" "2" pause pause pause pause "")
-(c:o0)
+(command "offset" "erase" "no" "" "")
 (princ)
 )
 
@@ -1367,7 +1385,7 @@ i
 
 ;Sets all the xref layer colors to 250
 (defun c:x25()
-(command "-layer" "color" "250" "*|*")
+(command "-layer" "color" "250" "*|*" "")
 (princ)
 )
 

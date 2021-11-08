@@ -17,11 +17,11 @@
 	
 	; opens the stuff I like keeping open
 	^!o::
-	Run Notepad++
+	;Run Notepad++
 	Run Chrome
 	Run explorer.exe "C:\Users\Ed Yother\Temp\Project Shortcuts"
 	Run explorer.exe "C:\Users\Ed Yother\Temp"
-	Run "C:\Program Files (x86)\SpeedCrunch\speedcrunch.exe"
+	;Run "C:\Program Files (x86)\SpeedCrunch\speedcrunch.exe"
 	return
 	
 ;#### Autocad Stuff ####
@@ -71,6 +71,39 @@
 	send, erase{space} 
 	send, pasteblock{space}
 	send, @{Return}
+	return
+
+;#### Revit Stuff ####
+
+	;Start ceiling sketch
+	+!c::
+	send, ce
+	sleep, 500
+	send, sc
+	sleep, 500
+	send, pl
+	return
+	
+	;Pick new work plan/place on face
+	+!f::
+	sleep, 500
+	send, pk
+	sleep 500
+	send, ff
+	return
+	
+	;copy selected folder names
+	+!r::
+	send,{F2}
+	send, ^c
+	send, {esc}
+	return
+	
+	;paste folder names
+	+!t::
+	send,{F2}
+	send, ^v
+	send, {return}
 	return
 
 ;#### ABC Stuff ####
@@ -145,11 +178,6 @@
 	send,a
 	sleep, 3000
 	send,{ENTER}
-	
-	; adds stuff to my timesheet csv file
-	;>^p::
-	;send,{Space}Number,Project Name
-	;return
 	
 	; Open and cleanup timesheet csv file
 	>^p::
