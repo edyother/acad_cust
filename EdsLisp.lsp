@@ -1050,10 +1050,10 @@
 )
 
 ;moves a chosen object to the circuit number layer
-(defun c:df()
-(command "chprop" (ssget)"" "la" "E-POWR-CIRC-NUMB" "")
-(princ)
-)
+;(defun c:df()
+;(command "chprop" (ssget)"" "la" "E-POWR-CIRC-NUMB" "")
+;(princ)
+;)
 
 ;places selected object onto E-LITE-IDEN layer
 (defun c:ci()
@@ -1710,8 +1710,31 @@ i
 (princ)
 )
 
+;Kill pdf layer
 (defun c:kp()
 (command "-layer" "off" "pdf" "")
+(princ)
+)
 
+
+(defun c:df()
+(command "xline" "offset" "6" pause pause pause pause "")
+(command "offset" "36" pause pause pause pause "")
+(command "trim" "" pause pause pause pause pause pause "")
+(princ)
+)
+
+;;set offset for door frames
+;(defun c:o2()
+;(command "offset" "erase" "yes" "2" pause pause pause pause "")
+;(command "offset" "erase" "no" "" "")
+;(princ)
+;)
+
+;for elevations
+;move object 20' to the right and rotate 270 degrees
+(defun c:mvr()
+(command "copy" pause pause "0,0" "@240,0")
+(command "rotate" pause pause pause "270")
 (princ)
 )
