@@ -550,7 +550,7 @@
 (defun c:vvs()
 (c:66)
 (command "-layer" "new" "g-anno-nplt" "color" "4" "g-anno-nplt" "set" "g-anno-nplt" "")
-(command "mview" "1.5,.9375" "32.0625,23.0625")
+(command "mview" "0.96874999,0.21874997" "28.21874999,23.71874997")
 (c:65)
 (princ)
 )
